@@ -18,10 +18,10 @@ const SignIn = () => {
 
       setMessage(res.data.message || "Login successful");
 
-      // ✅ LANDING → DASHBOARD (FULL URL)
+      //  LANDING 
       setTimeout(() => {
         window.location.href =
-          "https://zerodha-dashboard.onrender.com";
+          "https://zerodha-dashboard-6bnh.onrender.com";
       }, 800);
     } catch (err) {
       console.error(err.response?.data || err.message);
