@@ -13,9 +13,6 @@ const uri = process.env.MONGO_URL;
 
 const app = express();
 
-/* =========================
-   ✅ CORS (UPDATED FOR RENDER)
-========================= */
 app.use(
   cors({
     origin: [
@@ -34,9 +31,6 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-/* =========================
-   🔽 SEED ROUTES (COMMENTED FOR PRODUCTION)
-========================= */
 
 // app.get("/addHoldings", async (req, res) => {
 //   let tempHoldings = [
@@ -130,7 +124,7 @@ app.use(express.urlencoded({ extended: true }));
 // });
 
 /* =========================
-   ✅ API ROUTES (LIVE)
+    API ROUTES 
 ========================= */
 app.get("/allHoldings", async (req, res) => {
   const allHoldings = await HoldingsModel.find({});
@@ -155,7 +149,7 @@ app.post("/newOrder", async (req, res) => {
 });
 
 /* =========================
-   ✅ DB + SERVER START (BEST PRACTICE)
+    DB + SERVER START
 ========================= */
 mongoose
   .connect(uri)
